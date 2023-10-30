@@ -6,10 +6,13 @@ import { useState, useContext } from "react";
 const FavouritePlaces = () => {
   const { currentUser } = useContext(CurrentUserContext);
   const [hidden, setHidden] = useState(true);
+
+
   const handleClick = () => {
     setHidden(!hidden);
   };
-  console.log("!!user", currentUser)
+
+
   return (
     <li className={`sidebar__item ${hidden ? "" : "active"}`}>
       <div className="sidebar__item--heading" onClick={handleClick}>

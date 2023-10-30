@@ -329,12 +329,3 @@ const MarkerDetails = ({ details, setDetails, setCityPins }) => {
 };
 
 export default MarkerDetails;
-
-// memory string
-// photos [url]
-// rating num
-// recommendations [Recs]
-// user {}
-// visitedDate date string
-// visited bool
-// location {lat, lng}

@@ -1,6 +1,8 @@
 const TokenGenerator = require("../lib/tokenGenerator");
 const User = require("../models/user");
+
 const FriendsController = {
+
   Create: async (req, res) => {
     const currentUser = await User.findById(req.user_id);
     if (currentUser.friends.includes(req.body.friendId)) {
@@ -21,7 +23,6 @@ const FriendsController = {
         .populate("favouriteLocations")
         .then((updatedUser) => {
           console.log(updatedUser);
-
           res
             .status(201)
             .json({ message: "OK Friend Added", user: updatedUser });
@@ -35,7 +36,6 @@ const FriendsController = {
 
   Delete: async (req, res) => {
     const currentUser = await User.findById(req.user_id);
-
     if (currentUser.friends.includes(req.body.friendId)) {
       User.findByIdAndUpdate(
         req.user_id,

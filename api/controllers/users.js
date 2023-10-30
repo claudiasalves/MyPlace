@@ -48,16 +48,6 @@ const UsersController = {
       });
   },
 
-  // IndexUser: (req, res) => {
-  //   User.findById(req.user_id).exec((err, foundUser) => {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     const token = TokenGenerator.jsonwebtoken(req.user_id); // creates a new refresh token
-  //     res.status(200).json({ token, user: foundUser });
-  //   });
-  // },
-
   CurrentUser: (req, res) => {
     User.findOne({_id: req.user_id})
     .populate({path: "favouriteLocations", model: "City"})
@@ -84,6 +74,7 @@ const UsersController = {
           res.status(200).json({ message: "Avatar photo updated!", token: token, newUser: updatedUser });
       })
       .catch((err) => {
+      console.log(err)
       res.status(400).json({message: "something went wrong"})
       })
   },

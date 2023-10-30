@@ -111,7 +111,6 @@ const LoginForm = ({
           ) : null}
         </div>
       </div>
-      {/* <Navbar/> */}
     </>
   );
 }

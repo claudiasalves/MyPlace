@@ -78,6 +78,7 @@ class Api {
       return this._getResponseData(res);
     });
   }
+
   getUsers() {
     return fetch(`${this._baseUrl}/users`, {
       method: "GET",
@@ -88,21 +89,6 @@ class Api {
       return this._getResponseData(res);
     });
   }
-
-  // addFavourite() {
-  //   return fetch(`${this._baseUrl}/cities/${id}/addfavourite`, {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       friendId: friendId,
-  //     }),
-  //   }).then((res) => {
-  //     return this._getResponseData(res);
-  //   });
-  // }
 
   addFriend(friendId) {
     return fetch(`${this._baseUrl}/friends`, {

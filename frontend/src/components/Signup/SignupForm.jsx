@@ -130,7 +130,6 @@ const SignupForm = ({
 
   return (
     <>
-      {/* <Navbar /> */}
       <div className="container">
         <div className="container-panel container-panel_left">
           <SlideShow />

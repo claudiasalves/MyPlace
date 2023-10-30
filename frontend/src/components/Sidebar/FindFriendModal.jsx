@@ -14,7 +14,6 @@ const FindFriendModal = ({ showModal, setShowModal }) => {
     authApi
       .getUsers()
       .then((data) => {
-        // remove ourselves
         const otherUsers = data.users.filter(
           (user) => user._id !== currentUser._id
         );
@@ -25,7 +24,7 @@ const FindFriendModal = ({ showModal, setShowModal }) => {
         setError(errMessage);
         console.log(`Error: ${error.message}`);
       });
-  }, []);
+  }, [currentUser]);
 
   const addFriend = (friendId) => {
     authApi
@@ -41,23 +40,6 @@ const FindFriendModal = ({ showModal, setShowModal }) => {
         console.log(`Error: ${error.message}`);
       });
   };
-
-  useEffect(() => {
-    authApi
-      .getUsers()
-      .then((data) => {
-        // remove ourselves
-        const otherUsers = data.users.filter(
-          (user) => user._id !== currentUser._id
-        );
-        setAllUsers(otherUsers);
-      })
-      .catch((error) => {
-        let errMessage = error.message;
-        setError(errMessage);
-        console.log(`Error: ${error.message}`);
-      });
-  }, [currentUser]);
 
   const removeFriend = (friendId) => {
     authApi

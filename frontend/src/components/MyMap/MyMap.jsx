@@ -145,9 +145,7 @@ const MyMap = ({ cityPins, setCityPins, friend }) => {
       onClick={handleClick}
       initialViewState={{ ...viewport }}
       mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
-      //         mapStyle="mapbox://styles/mapbox/streets-v9"
       mapStyle="mapbox://styles/mapbox/streets-v12"
-      // mapStyle="mapbox://styles/mapbox/dark-v11"
       customAttribution="Brought to you by the MyPlace team"
     >
       <div className="map-owner">

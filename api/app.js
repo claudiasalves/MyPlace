@@ -12,11 +12,6 @@ const friendsRouter = require("./routes/friends");
 
 const app = express();
 
-// app.use((req, res, next) => {
-//   console.log("middleware body", req.body);
-//   next();
-// });
-
 app.use(express.json()); // setup for receiving JSON
 app.use(
   cors({
